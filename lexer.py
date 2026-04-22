@@ -1,3 +1,9 @@
+# Integrantes do grupo:
+# André Vinícius Zicka Schmidt - GitHub: andrevzs
+# Gabriel Fischer Domakoski - GitHub: fochu3013
+#
+# Nome do grupo no Canvas: RA2 19
+
 def eh_digito(c):
     return "0" <= c <= "9"
 

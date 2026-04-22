@@ -1,9 +1,8 @@
-# Integrantes do grupo (ordem alfabética):
+# Integrantes do grupo:
 # André Vinícius Zicka Schmidt - GitHub: andrevzs
 # Gabriel Fischer Domakoski - GitHub: fochu3013
 #
-# Grupo no Canvas:
-# RA1 19
+# Nome do grupo no Canvas: RA2 19
 
 import sys
 from lexer import parseExpressao

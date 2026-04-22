@@ -1,3 +1,9 @@
+# Integrantes do grupo:
+# André Vinícius Zicka Schmidt - GitHub: andrevzs
+# Gabriel Fischer Domakoski - GitHub: fochu3013
+#
+# Nome do grupo no Canvas: RA2 19
+
 class GeradorAssembly:
     def __init__(self):
         self.codigo = []
