@@ -10,7 +10,7 @@ EOF = "$"
 
 def construirGramatica():
     return {
-        "simbolo_inicial": "Programa",
+        "simbolo_inicial": "programa",
 
         "terminais": {
             "START_CMD", "END_CMD", "EOL",
@@ -23,63 +23,63 @@ def construirGramatica():
         },
 
         "nao_terminais": {
-            "Programa",
-            "ListaLinhas",
-            "Linha",
-            "Comando",
-            "CorpoComando",
-            "CorpoAposValor",
-            "Valor",
-            "Operador",
-            "ListaComandosBloco"
+            "programa",
+            "listalinhas",
+            "linha",
+            "comando",
+            "corpocomando",
+            "corpoaposvalor",
+            "valor",
+            "operador",
+            "listacomando"
         },
 
         "producoes": {
-            "Programa": [
-                ["START_CMD", "EOL", "ListaLinhas", "END_CMD", "EOL", EOF]
+            "programa": [
+                ["START_CMD", "EOL", "listalinhas", "END_CMD", "EOL", EOF]
             ],
 
-            "ListaLinhas": [
-                ["Linha", "ListaLinhas"],
+            "listalinhas": [
+                ["linha", "listalinhas"],
                 [EPSILON]
             ],
 
-            "Linha": [
-                ["Comando", "EOL"]
+            "linha": [
+                ["comando", "EOL"]
             ],
 
-            "Comando": [
-                ["LPAREN", "CorpoComando", "RPAREN"]
+            "comando": [
+                ["LPAREN", "corpocomando", "RPAREN"]
             ],
 
-            "CorpoComando": [
+            "corpocomando": [
                 ["RES", "INT"],
-                ["SET", "Valor", "ID"],
+                ["SET", "valor", "ID"],
                 ["GET", "ID"],
-                ["IF", "Valor", "Comando"],
-                ["IFELSE", "Valor", "Comando", "Comando"],
-                ["WHILE", "Valor", "Comando"],
-                ["BLOCK", "ListaComandosBloco"],
-                ["Valor", "CorpoAposValor"]
+                ["IF", "valor", "comando"],
+                ["IFELSE", "valor", "comando", "comando"],
+                ["WHILE", "valor", "comando"],
+                ["BLOCK", "listacomando"],
+                ["valor", "corpoaposvalor"]
             ],
 
-            "CorpoAposValor": [
-                ["Valor", "Operador"]
+            "corpoaposvalor": [
+                ["valor", "operador"]
             ],
 
-            "ListaComandosBloco": [
-                ["Linha", "ListaComandosBloco"],
+            "listacomando": [
+                ["linha", "listacomando"],
                 [EPSILON]
             ],
 
-            "Valor": [
+            "valor": [
                 ["INT"],
                 ["REAL"],
                 ["ID"],
-                ["Comando"]
+                ["comando"]
             ],
 
-            "Operador": [
+            "operador": [
                 ["+"],
                 ["-"],
                 ["*"],
