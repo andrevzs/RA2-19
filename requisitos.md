@@ -1,4 +1,4 @@
-# 29  Fase 2 - Analisador Sintático LL(1)
+# Fase 2 - Analisador Sintático LL(1)
 
 Este trabalho pode ser realizado em grupos de até **4** alunos. Grupos com mais de 4 membros terão o trabalho anulado. Leia todo este documento antes de começar e siga o seguinte código de ética: você pode discutir as questões com colegas, professores e amigos, consultar livros da disciplina, bibliotecas virtuais ou físicas, e a Internet em geral, em qualquer idioma. Com ou sem o uso de ferramentas de Inteligência Artificial. Contudo, o trabalho é seu e deve ser realizado por você. Plágio, ou qualquer outra violação das regras de integridade acadêmica, resultará na anulação do trabalho.
 
@@ -18,10 +18,10 @@ Não é permitido:
 - **Contornar o Aprendizado:** usar Inteligência Artificial para completar os objetivos centrais de aprendizado por você é proibido, por exemplo, pedir a uma Inteligência Artificial para construir um componente inteiro do projeto que você tem a tarefa de aprender. Esta prática é considerada uma forma de trapaça e resultará na anulação do trabalho.
 - **Violação de Licenças:** é proibido enviar código que viole as políticas de honestidade acadêmica da universidade, a licença dos dados de treinamento, ou qualquer outra restrição legal. Qualquer indicativo desta prática resultará na anulação do trabalho.
 
-## 29.1 Objetivo
+## 1 Objetivo
 Pesquisar e praticar os conceitos de analisadores léxico e sintático para desenvolver um programa em Python, C, ou C++. O objetivo é complementar o material de aula, aprimorando sua formação acadêmica e profissional por meio da construção de um *parser* ***LL(1)*** para a linguagem de programação simplificada que está descrita neste documento, utilizando como entrada o vetor de *tokens* gerado na Fase 1.
 
-## 29.2 Descrição do Trabalho
+## 2 Descrição do Trabalho
 O objetivo é desenvolver um programa capaz de:
 
 1. Implementar estruturas de controle (tomada de decisão e laços) mantendo a notação polonesa reversa;
@@ -32,7 +32,7 @@ O objetivo é desenvolver um programa capaz de:
 6. Gerar a árvore sintática correspondente ao código-fonte, representando a hierarquia das expressões e comandos;
 7. Detectar e reportar erros sintáticos de forma clara e informativa.
 
-### 29.2.1 Características da Linguagem
+### 2.1 Características da Linguagem
 As declarações continuam sendo escritas em notação polonesa reversa (RPN), no formato `(A B op)`, no qual `A` e `B` são operandos (números reais ou inteiros, ou referências a memória), e op é um operador aritmético, ou *keyword*, ou identificador, entre os listados neste documento.
 
 **Operadores Suportados:**
@@ -61,7 +61,7 @@ Nestes exemplos, `A`, `B`, `C`, `D`, e `E` podem ser números literais ou outras
 
 **Atenção:** deste ponto em diante, estamos escrevendo um programa completo e não um conjunto de expressões. Todos os programas devem começar com a linha `(START)`, e terminar com a linha `(END)`. O programa pode conter expressões RPN, comandos especiais, estruturas de controle, ou qualquer combinação destes, desde que estejam entre as linhas `(START)` e `(END)`.
 
-### 29.2.2 Comandos Especiais
+### 2.2 Comandos Especiais
 A linguagem inclui os mesmos comandos especiais da fase anterior para manipulação de memória e resultados:
 
 - `(N RES)`: Retorna o resultado da expressão `N` linhas anteriores (`N` é um inteiro não negativo);
@@ -74,38 +74,38 @@ A linguagem inclui os mesmos comandos especiais da fase anterior para manipulaç
 - `MEM` pode ser qualquer conjunto de letras latinas maiúsculas (ex: `MEM`, `VAR`, `X`, `CONTADOR`);
 - `RES` é uma keyword da linguagem.
 
-### 29.2.3 Novas Estruturas: Tomada de Decisão e Laços
+### 2.3 Novas Estruturas: Tomada de Decisão e Laços
 Você deverá criar e documentar a sintaxe para estruturas de tomada de decisão e laços de repetição. A única restrição é que estas estruturas mantenham o padrão da linguagem: devem estar contidas entre parênteses e seguir a lógica de operadores pós-fixados `(A B op)` ou `(A op)`.
 
-### 29.2.4 Geração de Assembly
+### 2.4 Geração de Assembly
 Nesta fase, a geração de código Assembly para o ambiente Cpulator-ARMv7 DEC1-SOC(v16.1) será feita diretamente a partir da árvore sintática gerada pelo analisador sintático, sem a necessidade de uma representação intermediária.
 
 A geração de código Assembly deve ser feita após a construção da árvore sintática, ou seja, à medida que o *parser* processa as expressões e comandos, ele deve gerar o código Assembly correspondente.
 
-## 29.3 Analisador Sintático com *parser* LL(1)
+## 3 Analisador Sintático com *parser* LL(1)
 O analisador sintático deve ser implementado como um *parser* descendente recursivo do tipo ***LL(1)***. A implementação deve incluir:
 
-### 29.3.1 Gramática LL(1)
+### 3.1 Gramática LL(1)
 Definir o conjunto completo de regras de produção para a linguagem, incluindo, mas não se limitando a:
 - Expressões aritméticas em RPN;
 - Comandos especiais (`RES`, `MEM`);
 - Estruturas de controle (decisão e laços);
 - Tratamento de aninhamento.
 
-### 29.3.2 Conjuntos FIRST e FOLLOW
+### 3.2 Conjuntos FIRST e FOLLOW
 Calcular e documentar os conjuntos *FIRST* e *FOLLOW* para cada não-terminal da gramática. Estes conjuntos devem ser incluídos na documentação do projeto. Eles são essenciais para a construção da tabela de análise ***LL(1)*** e para garantir que a gramática seja adequada para um parser descendente recursivo.
 
-### 29.3.3 Tabela de Análise (parsing Table)
+### 3.3 Tabela de Análise (parsing Table)
 Construir a tabela de análise ***LL(1)*** baseada nos conjuntos *FIRST* e *FOLLOW*. A tabela deve mapear pares (não-terminal, terminal) para regras de produção.
 
-### 29.3.4 parser Descendente Recursivo
+### 3.4 parser Descendente Recursivo
 Implementar o *parser* utilizando:
 - Buffer de entrada para os *tokens*;
 - Pilha de análise para controle do *parsing*;
 - Funções recursivas para cada não-terminal;
 - Geração da árvore sintática durante o *parsing*.
 
-### 29.3.5 Funções de Teste
+### 3.5 Funções de Teste
 Criar funções de teste específicas para validar o analisador sintático, cobrindo:
 
 - Erros léxicos (*tokens* inválidos);
@@ -117,7 +117,7 @@ Criar funções de teste específicas para validar o analisador sintático, cobr
 #### Important
 **Atenção:** O analisador sintático deve ser robusto e capaz de lidar com uma variedade de entradas, incluindo casos de erro. A qualidade da implementação do *parser* e a clareza das mensagens de erro serão critérios importantes na avaliação. Além disso: **durante a prova de autoria os testes serão feitos com um código-fonte diferente dos arquivos de teste entregues, e fornecido pelo professor, para validar a generalização do analisador sintático**.
 
-## 29.4 Arquivos de Teste
+## 4 Arquivos de Teste
 Fornecer um mínimo de **3 arquivos de texto**, cada um com pelo menos **10 linhas** de expressões segundo as especificações deste documento.
 
 **Requisitos dos Arquivos de Teste:**
@@ -131,7 +131,7 @@ Fornecer um mínimo de **3 arquivos de texto**, cada um com pelo menos **10 linh
 
 Os arquivos devem estar no mesmo diretório do código-fonte e ser processados via argumento de linha de comando (ex.: `./AnalisadorSintatico teste1.txt`).
 
-## 29.5 Hospedagem no GitHub
+## 5 Hospedagem no GitHub
 O projeto deve ser hospedado em um repositório público no GitHub, nomeado segundo o nome do grupo no ambiente virtual de aprendizado, **criado exclusivamente para este projeto**. O repositório deve ser criado por um dos alunos do grupo.
 
 O repositório deve conter:
@@ -153,7 +153,7 @@ O repositório deve ser organizado com *commits* claros, as contribuições de c
 - O uso de *issues* no GitHub é encorajado para discutir tarefas e bugs;
 - Um e somente um aluno do grupo será o administrador do repositório. Nenhum outro aluno do grupo pode ter acesso de escrita ao repositório, para evitar confusão e garantir a rastreabilidade das contribuições. O administrador do repositório é responsável por integrar as contribuições dos outros membros do grupo, garantindo que o código final seja coeso e funcional.
 
-## 29.6 Requisitos do Código
+## 6 Requisitos do Código
 As primeiras linhas do código devem conter:
  ```
 // Integrantes do grupo (ordem alfabética):
@@ -168,7 +168,7 @@ O programa deve receber o nome do arquivo de teste como argumento na linha de co
 
 O código deve ser escrito em Python, C, ou C++, com as funções nomeadas como está explicitado na Seção 7.
 
-## 29.7 Divisão de Tarefas para a Fase 2
+## 7 Divisão de Tarefas para a Fase 2
 O trabalho será dividido entre até quatro alunos, trabalhando independentemente, na mesma sala, ou de forma remota. Cada aluno será responsável por uma parte específica do sistema, com interfaces claras para facilitar a integração. Abaixo está uma sugestão de divisão das tarefas, considerando as funções solicitadas: `lerTokens`, `construirGramatica`, `parsear`, e `gerarArvore`.
 
 #### Note
@@ -178,7 +178,7 @@ O trabalho será dividido entre até quatro alunos, trabalhando independentement
 
 **Nota:** Não faz parte da avaliação, e não terá qualquer peso na nota, o uso de ferramentas gráficas para a visualização da árvore sintática. A representação da árvore em formato texto ou JSON é suficiente para a avaliação, e o uso de ferramentas gráficas é opcional.
 
-### 29.7.1 Aluno 1: Função `construirGramatica` e Análise LL(1)
+### 7.1 Aluno 1: Função `construirGramatica` e Análise LL(1)
 
 **Responsabilidades:**
 - Implementar construirGramatica() para definir as regras de produção da linguagem;
@@ -199,7 +199,7 @@ O trabalho será dividido entre até quatro alunos, trabalhando independentement
 - Saída: Estrutura de dados contendo gramática, **FIRST**, **FOLLOW** e tabela LL(1);
 - Fornece tabela LL(1) para a função `parsear()`.
 
-### 29.7.2 Aluno 2: Função `parsear`
+### 7.2 Aluno 2: Função `parsear`
 
 **Responsabilidades:**
 - Validar teoricamente a gramática criada pelo Aluno 1 para garantir que é LL(1);
@@ -222,7 +222,7 @@ O trabalho será dividido entre até quatro alunos, trabalhando independentement
 - Saída: Estrutura de derivação ou erro sintático;
 - Fornece estrutura de derivação para `gerarArvore()`.
 
-### 29.7.3 Aluno 3: Função `lerTokens` e Estruturas de Controle
+### 7.3 Aluno 3: Função `lerTokens` e Estruturas de Controle
 
 **Responsabilidades:**
 - Implementar `lerTokens(arquivo)` para ler *tokens* salvos da Fase 1;
@@ -244,7 +244,7 @@ O trabalho será dividido entre até quatro alunos, trabalhando independentement
 - Saída: Vetor de *tokens* estruturado;
 - Fornece *tokens* para a função `parsear()`.
 
-### 29.7.4 Aluno 4: Função `gerarArvore`, `gerarAssembly(arvore)`, Interface e Integração
+### 7.4 Aluno 4: Função `gerarArvore`, `gerarAssembly(arvore)`, Interface e Integração
 
 **Responsabilidades:**
 - Implementar `gerarArvore(derivacao)` para construir a árvore sintática;
@@ -266,7 +266,7 @@ O trabalho será dividido entre até quatro alunos, trabalhando independentement
 - Saída: Árvore sintática em formato estruturado;
 - Gerencia a execução completa via linha de comando.
 
-## 29.8 Considerações para Integração
+## 8 Considerações para Integração
 
 **Interfaces:** Concordar com assinaturas das funções e formatos de dados (ex.: estrutura de tokens, formato da árvore).
 
@@ -283,10 +283,10 @@ O trabalho será dividido entre até quatro alunos, trabalhando independentement
 
 **Depuração Final:** Testar o programa com os 3 arquivos de teste, verificando expressões, estruturas de controle, e árvore sintática.
 
-## 29.9 Avaliação
+## 9 Avaliação
 O trabalho será pré-avaliado de forma automática e novamente durante a prova de autoria, com os seguintes critérios:
 
-### 29.9.1 Funcionalidades do Analisador (70%)
+### 9.1 Funcionalidades do Analisador (70%)
 - Entrega e validação do *string* de *tokens*: Base da nota;
 - Cada operação aritmética não identificada corretamente: **-20%** dos 70%;
 - Falhas na definição/implementação dos laços de repetição: **-30%** dos 70%;
@@ -300,7 +300,7 @@ O trabalho será pré-avaliado de forma automática e novamente durante a prova 
 - Assembly executa mas produz resultado incorreto em pelo menos um caso de teste **-25%** dos 70%;
 - Assembly correto para expressões simples mas incorreto para expressões aninhadas ou estruturas de controle **-15%** dos 70%.
 
-### 29.9.2 Organização e Legibilidade do Código (15%)
+### 9.2 Organização e Legibilidade do Código (15%)
 
 - Código claro, comentado e bem estruturado
 - README bem escrito contendo:
@@ -315,39 +315,39 @@ O trabalho será pré-avaliado de forma automática e novamente durante a prova 
 
 **Nota:** os grupos que não seguirem a estrutura administrativa do GitHub (repositório público, nome do repositório, uso de *pull requests*, etc.) terão o trabalho anulado (**Nota final zero**). O uso correto do GitHub é parte integrante do processo de desenvolvimento e avaliação deste projeto.
 
-### 29.9.3 Robustez (15%)
+### 9.3 Robustez (15%)
 - Tratamento de erros em expressões complexas e entradas inválidas;
 - Mensagens de erro claras indicando linha e tipo de erro;
 - Testes cobrindo todos os casos (válidos e inválidos);
 - Recuperação básica de erros.
 
-## 29.10 Entrega
+## 10 Entrega
 O repositório no GitHub deve conter:
 
-### 29.10.1 Código-fonte
+### 10.1 Código-fonte
 - Programa completo em Python, C, ou C++;
 - Todas as funções especificadas implementadas.
 - Toda a documentação indicada neste documento, incluindo a gramática, conjuntos **FIRST** e **FOLLOW**, tabela LL(1), e a árvore sintática gerada.
 - Os entregáveis relativos ao último teste realizado durante o desenvolvimento do projeto, incluindo a árvore sintática gerada, devem estar claramente documentados e organizados no repositório.
 
-### 29.10.2 Arquivos de Teste
+### 10.2 Arquivos de Teste
 - Mínimo de 3 arquivos com 10 linhas, ou mais, cada;
 - Casos de teste válidos e inválidos;
 - Exemplos com estruturas de controle.
 
-### 29.10.3 Documentação
+### 10.3 Documentação
 - **README.md** bem formatado com:
     - Informações institucionais;
     - Instruções de compilação e execução;
     - Sintaxe das estruturas de controle;
     - Exemplos de uso.
 
-### 29.10.4 Arquivo de Saída
+### 10.4 Arquivo de Saída
 Um arquivo markdown (padrão usado no GitHub) para cada um dos entregáveis a seguir, contendo:
 - O conjunto de regras de produção da gramática;
 - Os conjuntos **FIRST** e **FOLLOW**;
 - A Tabela de Análise LL(1);
 - A representação da árvore sintática de um dos arquivos de teste.
 
-### 29.10.5 Formato de Execução
+### 10.5 Formato de Execução
 O programa deve ser executado com: `./AnalisadorSintatico teste1.txt`.
