@@ -53,7 +53,7 @@ def construirGramatica():
             ],
 
             "corpocomando": [
-                ["RES", "INT"],
+                ["RES", "valor"],
                 ["SET", "valor", "ID"],
                 ["GET", "ID"],
                 ["IF", "valor", "comando"],
@@ -64,7 +64,8 @@ def construirGramatica():
             ],
 
             "corpoaposvalor": [
-                ["valor", "operador"]
+                ["valor", "operador"],
+                [EPSILON]
             ],
 
             "listacomando": [
@@ -258,7 +259,145 @@ def imprimirAnalise(analise):
     print(f"\nGramática é LL(1)? {analise['eh_ll1']}")
 
 
+def gerarMarkdownGramatica(gramatica):
+    producoes = gramatica["producoes"]
+    terminais = gramatica["terminais"]
+    nao_terminais = gramatica["nao_terminais"]
+    
+    linhas = [
+        "# Gramática LL(1)",
+        "",
+        "## Símbolo Inicial",
+        gramatica["simbolo_inicial"],
+        "",
+        "## Terminais",
+    ]
+    
+    # Separar terminais em categorias
+    t_sorted = sorted([t for t in terminais if t != EOF and t != EPSILON])
+    operadores = [t for t in t_sorted if t in ["+", "-", "*", "/", "%", "^", "|"]]
+    keywords = [t for t in t_sorted if t in ["START_CMD", "END_CMD", "RES", "SET", "GET", "IF", "IFELSE", "WHILE", "BLOCK"]]
+    tipos = [t for t in t_sorted if t in ["INT", "REAL", "ID", "EOL"]]
+    delim = [t for t in t_sorted if t in ["LPAREN", "RPAREN"]]
+    
+    partes = []
+    if delim:
+        partes.append(", ".join(delim))
+    if tipos:
+        partes.append(", ".join(tipos))
+    if keywords:
+        partes.append(", ".join(keywords))
+    if operadores:
+        partes.append(", ".join(operadores))
+    
+    linhas.append(", ".join(partes))
+    linhas.append("")
+    linhas.append("## Não-Terminais")
+    linhas.append(", ".join(sorted(nao_terminais)))
+    linhas.append("")
+    linhas.append("---")
+    linhas.append("")
+    linhas.append("## Produções")
+    linhas.append("")
+    
+    for nt in sorted(producoes.keys()):
+        linhas.append(nt + " →")
+        regras = producoes[nt]
+        for i, regra in enumerate(regras):
+            if regra == [EPSILON]:
+                linhas.append("  | ε")
+            else:
+                regra_str = " ".join(regra)
+                if i == 0:
+                    linhas.append("  " + regra_str)
+                else:
+                    linhas.append("  | " + regra_str)
+        linhas.append("")
+    
+    conteudo = "\n".join(linhas)
+    with open("GRAMATICA_LL1.md", "w", encoding="utf-8") as f:
+        f.write(conteudo)
+    print("✓ Arquivo GRAMATICA_LL1.md gerado")
+
+
+def gerarMarkdownFirstFollow(analise):
+    first = analise["first"]
+    follow = analise["follow"]
+    
+    linhas = [
+        "# FIRST e FOLLOW",
+        "",
+        "## FIRST",
+        ""
+    ]
+    
+    for nt in sorted(first.keys()):
+        conj = first[nt]
+        conj_str = ", ".join(sorted([str(x) for x in conj]))
+        linhas.append("FIRST(" + nt + ") = { " + conj_str + " }")
+        linhas.append("")
+    
+    linhas.append("---")
+    linhas.append("")
+    linhas.append("## FOLLOW")
+    linhas.append("")
+    
+    for nt in sorted(follow.keys()):
+        conj = follow[nt]
+        conj_str = ", ".join(sorted([str(x) for x in conj]))
+        linhas.append("FOLLOW(" + nt + ") = { " + conj_str + " }")
+        linhas.append("")
+    
+    conteudo = "\n".join(linhas)
+    with open("FIRST_FOLLOW_LL1.md", "w", encoding="utf-8") as f:
+        f.write(conteudo)
+    print("✓ Arquivo FIRST_FOLLOW_LL1.md gerado")
+
+
+def gerarMarkdownTabela(gramatica, analise):
+    tabela = analise["tabela"]
+    
+    linhas = [
+        "# Tabela LL(1)",
+        "",
+        "## Entradas da Tabela de Parsing",
+        "",
+    ]
+    
+    for nt in sorted(tabela.keys()):
+        linhas.append("### " + nt)
+        linhas.append("")
+        
+        entradas = tabela[nt]
+        if not entradas:
+            linhas.append("(nenhuma entrada)")
+        else:
+            for terminal in sorted(entradas.keys(), key=str):
+                regra = entradas[terminal]
+                regra_str = " ".join(str(r) for r in regra)
+                linhas.append("M[" + nt + ", " + str(terminal) + "] = " + nt + " → " + regra_str)
+        
+        linhas.append("")
+    
+    conteudo = "\n".join(linhas)
+    with open("TABELA_LL1.md", "w", encoding="utf-8") as f:
+        f.write(conteudo)
+    print("✓ Arquivo TABELA_LL1.md gerado")
+
+
 if __name__ == "__main__":
+    print("Gerando análise LL(1)...\n")
+    
     gramatica = construirGramatica()
     analise = analisarLL1(gramatica)
+    
+    print("\n" + "="*50)
     imprimirAnalise(analise)
+    print("="*50 + "\n")
+    
+    print("Gerando arquivos markdown...\n")
+    gerarMarkdownGramatica(gramatica)
+    gerarMarkdownFirstFollow(analise)
+    gerarMarkdownTabela(gramatica, analise)
+    
+    print("\n✓ Análise LL(1) concluída com sucesso!")

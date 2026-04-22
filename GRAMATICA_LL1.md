@@ -1,65 +1,60 @@
 # Gramática LL(1)
 
 ## Símbolo Inicial
-Programa
+programa
 
 ## Terminais
-START_CMD, END_CMD, LPAREN, RPAREN, ID, INT, REAL, EOL  
-+, -, *, /, %, ^, |  
-RES, SET, GET, IF, IFELSE, WHILE, BLOCK  
+LPAREN, RPAREN, EOL, ID, INT, REAL, BLOCK, END_CMD, GET, IF, IFELSE, RES, SET, START_CMD, WHILE, %, *, +, -, /, ^, |
 
 ## Não-Terminais
-Programa  
-ListaLinhas  
-Linha  
-Comando  
-CorpoComando  
-Valor  
-CorpoAposValor  
-Operador  
-ListaComandosBloco  
+comando, corpoaposvalor, corpocomando, linha, listacomando, listalinhas, operador, programa, valor
 
 ---
 
 ## Produções
 
-Programa -> START_CMD ListaLinhas END_CMD
+comando →
+  LPAREN corpocomando RPAREN
 
-ListaLinhas -> Linha ListaLinhas | ε
-
-Linha -> Comando EOL
-
-Comando -> LPAREN CorpoComando RPAREN
-
-CorpoComando ->
-    RES Valor
-  | SET ID Valor
-  | GET ID
-  | IF Valor Comando
-  | IFELSE Valor Comando Comando
-  | WHILE Valor Comando
-  | BLOCK ListaComandosBloco
-  | Valor CorpoAposValor
-
-CorpoAposValor ->
-    Valor Operador CorpoAposValor
+corpoaposvalor →
+  valor operador
   | ε
 
-Valor ->
-    ID
-  | INT
-  | REAL
-  | LPAREN CorpoComando RPAREN
+corpocomando →
+  RES valor
+  | SET valor ID
+  | GET ID
+  | IF valor comando
+  | IFELSE valor comando comando
+  | WHILE valor comando
+  | BLOCK listacomando
+  | valor corpoaposvalor
 
-Operador ->
-    +
+linha →
+  comando EOL
+
+listacomando →
+  linha listacomando
+  | ε
+
+listalinhas →
+  linha listalinhas
+  | ε
+
+operador →
+  +
   | -
   | *
+  | |
   | /
   | %
   | ^
-  | |
 
-ListaComandosBloco ->
-    Comando ListaComandosBloco
-  | ε
+programa →
+  START_CMD EOL listalinhas END_CMD EOL $
+
+valor →
+  INT
+  | REAL
+  | ID
+  | comando

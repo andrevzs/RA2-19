@@ -1,117 +1,64 @@
 # Tabela LL(1)
 
-## Regras principais
+## Entradas da Tabela de Parsing
 
-M[Programa, START_CMD] =  
-Programa -> START_CMD ListaLinhas END_CMD
+### comando
 
----
+M[comando, LPAREN] = comando → LPAREN corpocomando RPAREN
 
-M[ListaLinhas, LPAREN] =  
-ListaLinhas -> Linha ListaLinhas  
+### corpoaposvalor
 
-M[ListaLinhas, END_CMD] =  
-ListaLinhas -> ε
+M[corpoaposvalor, ID] = corpoaposvalor → valor operador
+M[corpoaposvalor, INT] = corpoaposvalor → valor operador
+M[corpoaposvalor, LPAREN] = corpoaposvalor → valor operador
+M[corpoaposvalor, REAL] = corpoaposvalor → valor operador
+M[corpoaposvalor, RPAREN] = corpoaposvalor → ε
 
----
+### corpocomando
 
-M[Linha, LPAREN] =  
-Linha -> Comando EOL
+M[corpocomando, BLOCK] = corpocomando → BLOCK listacomando
+M[corpocomando, GET] = corpocomando → GET ID
+M[corpocomando, ID] = corpocomando → valor corpoaposvalor
+M[corpocomando, IF] = corpocomando → IF valor comando
+M[corpocomando, IFELSE] = corpocomando → IFELSE valor comando comando
+M[corpocomando, INT] = corpocomando → valor corpoaposvalor
+M[corpocomando, LPAREN] = corpocomando → valor corpoaposvalor
+M[corpocomando, REAL] = corpocomando → valor corpoaposvalor
+M[corpocomando, RES] = corpocomando → RES valor
+M[corpocomando, SET] = corpocomando → SET valor ID
+M[corpocomando, WHILE] = corpocomando → WHILE valor comando
 
----
+### linha
 
-M[Comando, LPAREN] =  
-Comando -> LPAREN CorpoComando RPAREN
+M[linha, LPAREN] = linha → comando EOL
 
----
+### listacomando
 
-## CorpoComando
+M[listacomando, LPAREN] = listacomando → linha listacomando
+M[listacomando, RPAREN] = listacomando → ε
 
-M[CorpoComando, RES] =  
-CorpoComando -> RES Valor  
+### listalinhas
 
-M[CorpoComando, SET] =  
-CorpoComando -> SET ID Valor  
+M[listalinhas, END_CMD] = listalinhas → ε
+M[listalinhas, LPAREN] = listalinhas → linha listalinhas
 
-M[CorpoComando, GET] =  
-CorpoComando -> GET ID  
+### operador
 
-M[CorpoComando, IF] =  
-CorpoComando -> IF Valor Comando  
+M[operador, %] = operador → %
+M[operador, *] = operador → *
+M[operador, +] = operador → +
+M[operador, -] = operador → -
+M[operador, /] = operador → /
+M[operador, ^] = operador → ^
+M[operador, |] = operador → |
 
-M[CorpoComando, IFELSE] =  
-CorpoComando -> IFELSE Valor Comando Comando  
+### programa
 
-M[CorpoComando, WHILE] =  
-CorpoComando -> WHILE Valor Comando  
+M[programa, START_CMD] = programa → START_CMD EOL listalinhas END_CMD EOL $
 
-M[CorpoComando, BLOCK] =  
-CorpoComando -> BLOCK ListaComandosBloco  
+### valor
 
-M[CorpoComando, ID] =  
-CorpoComando -> Valor CorpoAposValor  
-
-M[CorpoComando, INT] =  
-CorpoComando -> Valor CorpoAposValor  
-
-M[CorpoComando, REAL] =  
-CorpoComando -> Valor CorpoAposValor  
-
-M[CorpoComando, LPAREN] =  
-CorpoComando -> Valor CorpoAposValor  
-
----
-
-## Valor
-
-M[Valor, ID] = Valor -> ID  
-M[Valor, INT] = Valor -> INT  
-M[Valor, REAL] = Valor -> REAL  
-M[Valor, LPAREN] = Valor -> LPAREN CorpoComando RPAREN  
-
----
-
-## CorpoAposValor
-
-M[CorpoAposValor, ID] =  
-CorpoAposValor -> Valor Operador CorpoAposValor  
-
-M[CorpoAposValor, INT] =  
-CorpoAposValor -> Valor Operador CorpoAposValor  
-
-M[CorpoAposValor, REAL] =  
-CorpoAposValor -> Valor Operador CorpoAposValor  
-
-M[CorpoAposValor, LPAREN] =  
-CorpoAposValor -> Valor Operador CorpoAposValor  
-
-M[CorpoAposValor, RPAREN] =  
-CorpoAposValor -> ε  
-
----
-
-## Operador
-
-M[Operador, +] = Operador -> +  
-M[Operador, -] = Operador -> -  
-M[Operador, *] = Operador -> *  
-M[Operador, /] = Operador -> /  
-M[Operador, %] = Operador -> %  
-M[Operador, ^] = Operador -> ^  
-M[Operador, |] = Operador -> |  
-
----
-
-## ListaComandosBloco
-
-M[ListaComandosBloco, LPAREN] =  
-ListaComandosBloco -> Comando ListaComandosBloco  
-
-M[ListaComandosBloco, RPAREN] =  
-ListaComandosBloco -> ε  
-
----
-
-## Observação
-
-A tabela não apresenta conflitos, confirmando que a gramática é LL(1).
+M[valor, ID] = valor → ID
+M[valor, INT] = valor → INT
+M[valor, LPAREN] = valor → comando
+M[valor, REAL] = valor → REAL

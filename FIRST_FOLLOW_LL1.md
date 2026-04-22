@@ -2,48 +2,42 @@
 
 ## FIRST
 
-FIRST(Programa) = { START_CMD }
+FIRST(comando) = { LPAREN }
 
-FIRST(ListaLinhas) = { LPAREN, ε }
+FIRST(corpoaposvalor) = { ID, INT, LPAREN, REAL, ε }
 
-FIRST(Linha) = { LPAREN }
+FIRST(corpocomando) = { BLOCK, GET, ID, IF, IFELSE, INT, LPAREN, REAL, RES, SET, WHILE }
 
-FIRST(Comando) = { LPAREN }
+FIRST(linha) = { LPAREN }
 
-FIRST(CorpoComando) = {  
-BLOCK, GET, ID, IF, IFELSE, INT, LPAREN, REAL, RES, SET, WHILE  
-}
+FIRST(listacomando) = { LPAREN, ε }
 
-FIRST(Valor) = { ID, INT, REAL, LPAREN }
+FIRST(listalinhas) = { LPAREN, ε }
 
-FIRST(CorpoAposValor) = { ID, INT, REAL, LPAREN, ε }
+FIRST(operador) = { %, *, +, -, /, ^, | }
 
-FIRST(Operador) = { +, -, *, /, %, ^, | }
+FIRST(programa) = { START_CMD }
 
-FIRST(ListaComandosBloco) = { LPAREN, ε }
+FIRST(valor) = { ID, INT, LPAREN, REAL }
 
 ---
 
 ## FOLLOW
 
-FOLLOW(Programa) = { $ }
+FOLLOW(comando) = { %, *, +, -, /, EOL, ID, INT, LPAREN, REAL, RPAREN, ^, | }
 
-FOLLOW(ListaLinhas) = { END_CMD }
+FOLLOW(corpoaposvalor) = { RPAREN }
 
-FOLLOW(Linha) = { END_CMD, LPAREN, RPAREN }
+FOLLOW(corpocomando) = { RPAREN }
 
-FOLLOW(Comando) = {  
-%, *, +, -, /, EOL, ID, INT, LPAREN, REAL, RPAREN, ^, |  
-}
+FOLLOW(linha) = { END_CMD, LPAREN, RPAREN }
 
-FOLLOW(CorpoComando) = { RPAREN }
+FOLLOW(listacomando) = { RPAREN }
 
-FOLLOW(Valor) = {  
-%, *, +, -, /, ID, INT, LPAREN, REAL, ^, |  
-}
+FOLLOW(listalinhas) = { END_CMD }
 
-FOLLOW(CorpoAposValor) = { RPAREN }
+FOLLOW(operador) = { RPAREN }
 
-FOLLOW(Operador) = { RPAREN }
+FOLLOW(programa) = { $ }
 
-FOLLOW(ListaComandosBloco) = { RPAREN }
+FOLLOW(valor) = { %, *, +, -, /, ID, INT, LPAREN, REAL, RPAREN, ^, | }
