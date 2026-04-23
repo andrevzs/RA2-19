@@ -5,9 +5,9 @@
 # Nome do grupo no Canvas: RA2 19
 
 import sys
-from lexer import parseExpressao
-from executor import executarExpressao
-from assembler import GeradorAssembly
+from ler_tokens import lerTokens
+from gramatica_ll1 import construirGramatica, analisarLL1
+from parser import parsear
 
 
 def lerArquivoTeste(nome_arquivo):
@@ -31,8 +31,8 @@ def lerArquivoTeste(nome_arquivo):
 
 def salvarTokens(todos_tokens):
     with open("tokens.txt", "w", encoding="utf-8") as arquivo:
-        for numero_linha, tokens in todos_tokens:
-            arquivo.write(f"Linha {numero_linha}: {tokens}\n")
+        for token in todos_tokens:
+            arquivo.write(f"{token}\n")
 
 
 def salvarAssembly(codigo):
@@ -41,29 +41,44 @@ def salvarAssembly(codigo):
 
 
 def processarLinhas(linhas):
-    memoria = {}
-    resultados = []
     todos_tokens = []
-    gerador = GeradorAssembly()
-
-    gerador.iniciar_programa()
 
     for numero_linha, conteudo in linhas:
-        tokens = parseExpressao(conteudo)
-        resultado = executarExpressao(tokens, memoria, resultados)
+        print(f"Linha {numero_linha}: {conteudo}")
 
-        print(f"Linha {numero_linha}: {tokens}")
-        print(f"  Executor: {resultado}")
+    try:
+        todos_tokens = lerTokens(sys.argv[1])
+    except ValueError as erro:
+        print(f"Erro léxico/sintático na leitura dos tokens: {erro}")
+        sys.exit(1)
 
-        todos_tokens.append((numero_linha, tokens))
-        resultados.append(resultado)
+    print("\nTokens gerados:")
+    for token in todos_tokens:
+        print(token)
 
-        gerador.adicionar_linha(numero_linha, resultado)
+    gramatica = construirGramatica()
+    analise = analisarLL1(gramatica)
 
-    gerador.finalizar_programa()
+    print(f"\nGramática é LL(1)? {analise['eh_ll1']}")
+    if not analise["eh_ll1"]:
+        print("Conflitos encontrados na gramática:")
+        for conflito in analise["conflitos"]:
+            print(conflito)
+        sys.exit(1)
+
+    resultado = parsear(todos_tokens, analise)
+
+    print("\nResultado do parser:")
+    if resultado["sucesso"]:
+        print("Parsing realizado com sucesso!")
+        print("\nÁrvore sintática:")
+        print(resultado["arvore"])
+    else:
+        print("Erro durante o parsing:")
+        print(resultado["erro"])
+        sys.exit(1)
 
     salvarTokens(todos_tokens)
-    salvarAssembly(gerador.obter_codigo())
 
     return todos_tokens
 
