@@ -27,8 +27,6 @@ A linguagem suporta:
 
 ##  Gramática LL(1)
 
-A gramática da linguagem foi **refatorada para o formato LL(1)**, eliminando ambiguidades e conflitos.
-
 Foram implementados:
 
 - Cálculo dos conjuntos **FIRST**
