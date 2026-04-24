@@ -276,6 +276,18 @@ class GeradorAssembly:
 
         self._emit("")
 
+    def adicionar_controle_noop(self, numero_linha, tipo_controle):
+        """
+        Gera uma linha assembly válida para estruturas de controle que ainda
+        não possuem tradução semântica completa no executor.
+        """
+        self._reiniciar_estado_expressao()
+        self._emit(f"    @ Linha {numero_linha} - {tipo_controle}")
+        self._emit("    @ Estrutura de controle representada como no-op")
+        self._carrega_constante_float("0.0", "d0")
+        self._salvar_resultado_linha(numero_linha)
+        self._emit("")
+
     def obter_codigo(self):
         return "\n".join(self.codigo)
 

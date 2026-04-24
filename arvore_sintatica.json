@@ -1,0 +1,1599 @@
+{
+  "tipo": "programa",
+  "valor": null,
+  "filhos": [
+    {
+      "tipo": "terminal",
+      "valor": "START_CMD",
+      "filhos": []
+    },
+    {
+      "tipo": "terminal",
+      "valor": "EOL",
+      "filhos": []
+    },
+    {
+      "tipo": "listalinhas",
+      "valor": null,
+      "filhos": [
+        {
+          "tipo": "linha",
+          "valor": null,
+          "filhos": [
+            {
+              "tipo": "comando",
+              "valor": null,
+              "filhos": [
+                {
+                  "tipo": "terminal",
+                  "valor": "LPAREN",
+                  "filhos": []
+                },
+                {
+                  "tipo": "corpocomando",
+                  "valor": null,
+                  "filhos": [
+                    {
+                      "tipo": "valor",
+                      "valor": null,
+                      "filhos": [
+                        {
+                          "tipo": "terminal",
+                          "valor": "REAL",
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "tipo": "corpoaposvalor",
+                      "valor": null,
+                      "filhos": [
+                        {
+                          "tipo": "valor",
+                          "valor": null,
+                          "filhos": [
+                            {
+                              "tipo": "terminal",
+                              "valor": "REAL",
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "tipo": "operador",
+                          "valor": null,
+                          "filhos": [
+                            {
+                              "tipo": "terminal",
+                              "valor": "+",
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tipo": "terminal",
+                  "valor": "RPAREN",
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "tipo": "terminal",
+              "valor": "EOL",
+              "filhos": []
+            }
+          ]
+        },
+        {
+          "tipo": "listalinhas",
+          "valor": null,
+          "filhos": [
+            {
+              "tipo": "linha",
+              "valor": null,
+              "filhos": [
+                {
+                  "tipo": "comando",
+                  "valor": null,
+                  "filhos": [
+                    {
+                      "tipo": "terminal",
+                      "valor": "LPAREN",
+                      "filhos": []
+                    },
+                    {
+                      "tipo": "corpocomando",
+                      "valor": null,
+                      "filhos": [
+                        {
+                          "tipo": "terminal",
+                          "valor": "RES",
+                          "filhos": []
+                        },
+                        {
+                          "tipo": "valor",
+                          "valor": null,
+                          "filhos": [
+                            {
+                              "tipo": "terminal",
+                              "valor": "INT",
+                              "filhos": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tipo": "terminal",
+                      "valor": "RPAREN",
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "tipo": "terminal",
+                  "valor": "EOL",
+                  "filhos": []
+                }
+              ]
+            },
+            {
+              "tipo": "listalinhas",
+              "valor": null,
+              "filhos": [
+                {
+                  "tipo": "linha",
+                  "valor": null,
+                  "filhos": [
+                    {
+                      "tipo": "comando",
+                      "valor": null,
+                      "filhos": [
+                        {
+                          "tipo": "terminal",
+                          "valor": "LPAREN",
+                          "filhos": []
+                        },
+                        {
+                          "tipo": "corpocomando",
+                          "valor": null,
+                          "filhos": [
+                            {
+                              "tipo": "terminal",
+                              "valor": "SET",
+                              "filhos": []
+                            },
+                            {
+                              "tipo": "valor",
+                              "valor": null,
+                              "filhos": [
+                                {
+                                  "tipo": "terminal",
+                                  "valor": "REAL",
+                                  "filhos": []
+                                }
+                              ]
+                            },
+                            {
+                              "tipo": "terminal",
+                              "valor": "ID",
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "tipo": "terminal",
+                          "valor": "RPAREN",
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "tipo": "terminal",
+                      "valor": "EOL",
+                      "filhos": []
+                    }
+                  ]
+                },
+                {
+                  "tipo": "listalinhas",
+                  "valor": null,
+                  "filhos": [
+                    {
+                      "tipo": "linha",
+                      "valor": null,
+                      "filhos": [
+                        {
+                          "tipo": "comando",
+                          "valor": null,
+                          "filhos": [
+                            {
+                              "tipo": "terminal",
+                              "valor": "LPAREN",
+                              "filhos": []
+                            },
+                            {
+                              "tipo": "corpocomando",
+                              "valor": null,
+                              "filhos": [
+                                {
+                                  "tipo": "terminal",
+                                  "valor": "GET",
+                                  "filhos": []
+                                },
+                                {
+                                  "tipo": "terminal",
+                                  "valor": "ID",
+                                  "filhos": []
+                                }
+                              ]
+                            },
+                            {
+                              "tipo": "terminal",
+                              "valor": "RPAREN",
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "tipo": "terminal",
+                          "valor": "EOL",
+                          "filhos": []
+                        }
+                      ]
+                    },
+                    {
+                      "tipo": "listalinhas",
+                      "valor": null,
+                      "filhos": [
+                        {
+                          "tipo": "linha",
+                          "valor": null,
+                          "filhos": [
+                            {
+                              "tipo": "comando",
+                              "valor": null,
+                              "filhos": [
+                                {
+                                  "tipo": "terminal",
+                                  "valor": "LPAREN",
+                                  "filhos": []
+                                },
+                                {
+                                  "tipo": "corpocomando",
+                                  "valor": null,
+                                  "filhos": [
+                                    {
+                                      "tipo": "valor",
+                                      "valor": null,
+                                      "filhos": [
+                                        {
+                                          "tipo": "comando",
+                                          "valor": null,
+                                          "filhos": [
+                                            {
+                                              "tipo": "terminal",
+                                              "valor": "LPAREN",
+                                              "filhos": []
+                                            },
+                                            {
+                                              "tipo": "corpocomando",
+                                              "valor": null,
+                                              "filhos": [
+                                                {
+                                                  "tipo": "valor",
+                                                  "valor": null,
+                                                  "filhos": [
+                                                    {
+                                                      "tipo": "terminal",
+                                                      "valor": "INT",
+                                                      "filhos": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tipo": "corpoaposvalor",
+                                                  "valor": null,
+                                                  "filhos": [
+                                                    {
+                                                      "tipo": "valor",
+                                                      "valor": null,
+                                                      "filhos": [
+                                                        {
+                                                          "tipo": "terminal",
+                                                          "valor": "INT",
+                                                          "filhos": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "tipo": "operador",
+                                                      "valor": null,
+                                                      "filhos": [
+                                                        {
+                                                          "tipo": "terminal",
+                                                          "valor": "+",
+                                                          "filhos": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tipo": "terminal",
+                                              "valor": "RPAREN",
+                                              "filhos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tipo": "corpoaposvalor",
+                                      "valor": null,
+                                      "filhos": [
+                                        {
+                                          "tipo": "valor",
+                                          "valor": null,
+                                          "filhos": [
+                                            {
+                                              "tipo": "comando",
+                                              "valor": null,
+                                              "filhos": [
+                                                {
+                                                  "tipo": "terminal",
+                                                  "valor": "LPAREN",
+                                                  "filhos": []
+                                                },
+                                                {
+                                                  "tipo": "corpocomando",
+                                                  "valor": null,
+                                                  "filhos": [
+                                                    {
+                                                      "tipo": "valor",
+                                                      "valor": null,
+                                                      "filhos": [
+                                                        {
+                                                          "tipo": "terminal",
+                                                          "valor": "INT",
+                                                          "filhos": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "tipo": "corpoaposvalor",
+                                                      "valor": null,
+                                                      "filhos": [
+                                                        {
+                                                          "tipo": "valor",
+                                                          "valor": null,
+                                                          "filhos": [
+                                                            {
+                                                              "tipo": "terminal",
+                                                              "valor": "INT",
+                                                              "filhos": []
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "tipo": "operador",
+                                                          "valor": null,
+                                                          "filhos": [
+                                                            {
+                                                              "tipo": "terminal",
+                                                              "valor": "*",
+                                                              "filhos": []
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tipo": "terminal",
+                                                  "valor": "RPAREN",
+                                                  "filhos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tipo": "operador",
+                                          "valor": null,
+                                          "filhos": [
+                                            {
+                                              "tipo": "terminal",
+                                              "valor": "/",
+                                              "filhos": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tipo": "terminal",
+                                  "valor": "RPAREN",
+                                  "filhos": []
+                                }
+                              ]
+                            },
+                            {
+                              "tipo": "terminal",
+                              "valor": "EOL",
+                              "filhos": []
+                            }
+                          ]
+                        },
+                        {
+                          "tipo": "listalinhas",
+                          "valor": null,
+                          "filhos": [
+                            {
+                              "tipo": "linha",
+                              "valor": null,
+                              "filhos": [
+                                {
+                                  "tipo": "comando",
+                                  "valor": null,
+                                  "filhos": [
+                                    {
+                                      "tipo": "terminal",
+                                      "valor": "LPAREN",
+                                      "filhos": []
+                                    },
+                                    {
+                                      "tipo": "corpocomando",
+                                      "valor": null,
+                                      "filhos": [
+                                        {
+                                          "tipo": "valor",
+                                          "valor": null,
+                                          "filhos": [
+                                            {
+                                              "tipo": "terminal",
+                                              "valor": "INT",
+                                              "filhos": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tipo": "corpoaposvalor",
+                                          "valor": null,
+                                          "filhos": [
+                                            {
+                                              "tipo": "valor",
+                                              "valor": null,
+                                              "filhos": [
+                                                {
+                                                  "tipo": "terminal",
+                                                  "valor": "INT",
+                                                  "filhos": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tipo": "operador",
+                                              "valor": null,
+                                              "filhos": [
+                                                {
+                                                  "tipo": "terminal",
+                                                  "valor": "//",
+                                                  "filhos": []
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tipo": "terminal",
+                                      "valor": "RPAREN",
+                                      "filhos": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tipo": "terminal",
+                                  "valor": "EOL",
+                                  "filhos": []
+                                }
+                              ]
+                            },
+                            {
+                              "tipo": "listalinhas",
+                              "valor": null,
+                              "filhos": [
+                                {
+                                  "tipo": "linha",
+                                  "valor": null,
+                                  "filhos": [
+                                    {
+                                      "tipo": "comando",
+                                      "valor": null,
+                                      "filhos": [
+                                        {
+                                          "tipo": "terminal",
+                                          "valor": "LPAREN",
+                                          "filhos": []
+                                        },
+                                        {
+                                          "tipo": "corpocomando",
+                                          "valor": null,
+                                          "filhos": [
+                                            {
+                                              "tipo": "valor",
+                                              "valor": null,
+                                              "filhos": [
+                                                {
+                                                  "tipo": "terminal",
+                                                  "valor": "INT",
+                                                  "filhos": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tipo": "corpoaposvalor",
+                                              "valor": null,
+                                              "filhos": [
+                                                {
+                                                  "tipo": "valor",
+                                                  "valor": null,
+                                                  "filhos": [
+                                                    {
+                                                      "tipo": "terminal",
+                                                      "valor": "INT",
+                                                      "filhos": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tipo": "operador",
+                                                  "valor": null,
+                                                  "filhos": [
+                                                    {
+                                                      "tipo": "terminal",
+                                                      "valor": "%",
+                                                      "filhos": []
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tipo": "terminal",
+                                          "valor": "RPAREN",
+                                          "filhos": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tipo": "terminal",
+                                      "valor": "EOL",
+                                      "filhos": []
+                                    }
+                                  ]
+                                },
+                                {
+                                  "tipo": "listalinhas",
+                                  "valor": null,
+                                  "filhos": [
+                                    {
+                                      "tipo": "linha",
+                                      "valor": null,
+                                      "filhos": [
+                                        {
+                                          "tipo": "comando",
+                                          "valor": null,
+                                          "filhos": [
+                                            {
+                                              "tipo": "terminal",
+                                              "valor": "LPAREN",
+                                              "filhos": []
+                                            },
+                                            {
+                                              "tipo": "corpocomando",
+                                              "valor": null,
+                                              "filhos": [
+                                                {
+                                                  "tipo": "valor",
+                                                  "valor": null,
+                                                  "filhos": [
+                                                    {
+                                                      "tipo": "terminal",
+                                                      "valor": "INT",
+                                                      "filhos": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tipo": "corpoaposvalor",
+                                                  "valor": null,
+                                                  "filhos": [
+                                                    {
+                                                      "tipo": "valor",
+                                                      "valor": null,
+                                                      "filhos": [
+                                                        {
+                                                          "tipo": "terminal",
+                                                          "valor": "INT",
+                                                          "filhos": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "tipo": "operador",
+                                                      "valor": null,
+                                                      "filhos": [
+                                                        {
+                                                          "tipo": "terminal",
+                                                          "valor": "^",
+                                                          "filhos": []
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tipo": "terminal",
+                                              "valor": "RPAREN",
+                                              "filhos": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tipo": "terminal",
+                                          "valor": "EOL",
+                                          "filhos": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "tipo": "listalinhas",
+                                      "valor": null,
+                                      "filhos": [
+                                        {
+                                          "tipo": "linha",
+                                          "valor": null,
+                                          "filhos": [
+                                            {
+                                              "tipo": "comando",
+                                              "valor": null,
+                                              "filhos": [
+                                                {
+                                                  "tipo": "terminal",
+                                                  "valor": "LPAREN",
+                                                  "filhos": []
+                                                },
+                                                {
+                                                  "tipo": "corpocomando",
+                                                  "valor": null,
+                                                  "filhos": [
+                                                    {
+                                                      "tipo": "terminal",
+                                                      "valor": "SET",
+                                                      "filhos": []
+                                                    },
+                                                    {
+                                                      "tipo": "valor",
+                                                      "valor": null,
+                                                      "filhos": [
+                                                        {
+                                                          "tipo": "terminal",
+                                                          "valor": "REAL",
+                                                          "filhos": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "tipo": "terminal",
+                                                      "valor": "ID",
+                                                      "filhos": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tipo": "terminal",
+                                                  "valor": "RPAREN",
+                                                  "filhos": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tipo": "terminal",
+                                              "valor": "EOL",
+                                              "filhos": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "tipo": "listalinhas",
+                                          "valor": null,
+                                          "filhos": [
+                                            {
+                                              "tipo": "linha",
+                                              "valor": null,
+                                              "filhos": [
+                                                {
+                                                  "tipo": "comando",
+                                                  "valor": null,
+                                                  "filhos": [
+                                                    {
+                                                      "tipo": "terminal",
+                                                      "valor": "LPAREN",
+                                                      "filhos": []
+                                                    },
+                                                    {
+                                                      "tipo": "corpocomando",
+                                                      "valor": null,
+                                                      "filhos": [
+                                                        {
+                                                          "tipo": "terminal",
+                                                          "valor": "GET",
+                                                          "filhos": []
+                                                        },
+                                                        {
+                                                          "tipo": "terminal",
+                                                          "valor": "ID",
+                                                          "filhos": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "tipo": "terminal",
+                                                      "valor": "RPAREN",
+                                                      "filhos": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tipo": "terminal",
+                                                  "valor": "EOL",
+                                                  "filhos": []
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "tipo": "listalinhas",
+                                              "valor": null,
+                                              "filhos": [
+                                                {
+                                                  "tipo": "linha",
+                                                  "valor": null,
+                                                  "filhos": [
+                                                    {
+                                                      "tipo": "comando",
+                                                      "valor": null,
+                                                      "filhos": [
+                                                        {
+                                                          "tipo": "terminal",
+                                                          "valor": "LPAREN",
+                                                          "filhos": []
+                                                        },
+                                                        {
+                                                          "tipo": "corpocomando",
+                                                          "valor": null,
+                                                          "filhos": [
+                                                            {
+                                                              "tipo": "valor",
+                                                              "valor": null,
+                                                              "filhos": [
+                                                                {
+                                                                  "tipo": "comando",
+                                                                  "valor": null,
+                                                                  "filhos": [
+                                                                    {
+                                                                      "tipo": "terminal",
+                                                                      "valor": "LPAREN",
+                                                                      "filhos": []
+                                                                    },
+                                                                    {
+                                                                      "tipo": "corpocomando",
+                                                                      "valor": null,
+                                                                      "filhos": [
+                                                                        {
+                                                                          "tipo": "valor",
+                                                                          "valor": null,
+                                                                          "filhos": [
+                                                                            {
+                                                                              "tipo": "terminal",
+                                                                              "valor": "INT",
+                                                                              "filhos": []
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "tipo": "corpoaposvalor",
+                                                                          "valor": null,
+                                                                          "filhos": [
+                                                                            {
+                                                                              "tipo": "valor",
+                                                                              "valor": null,
+                                                                              "filhos": [
+                                                                                {
+                                                                                  "tipo": "terminal",
+                                                                                  "valor": "INT",
+                                                                                  "filhos": []
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "tipo": "operador",
+                                                                              "valor": null,
+                                                                              "filhos": [
+                                                                                {
+                                                                                  "tipo": "terminal",
+                                                                                  "valor": "+",
+                                                                                  "filhos": []
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "tipo": "terminal",
+                                                                      "valor": "RPAREN",
+                                                                      "filhos": []
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "tipo": "corpoaposvalor",
+                                                              "valor": null,
+                                                              "filhos": [
+                                                                {
+                                                                  "tipo": "valor",
+                                                                  "valor": null,
+                                                                  "filhos": [
+                                                                    {
+                                                                      "tipo": "terminal",
+                                                                      "valor": "INT",
+                                                                      "filhos": []
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "tipo": "operador",
+                                                                  "valor": null,
+                                                                  "filhos": [
+                                                                    {
+                                                                      "tipo": "terminal",
+                                                                      "valor": "-",
+                                                                      "filhos": []
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "tipo": "terminal",
+                                                          "valor": "RPAREN",
+                                                          "filhos": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "tipo": "terminal",
+                                                      "valor": "EOL",
+                                                      "filhos": []
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "tipo": "listalinhas",
+                                                  "valor": null,
+                                                  "filhos": [
+                                                    {
+                                                      "tipo": "linha",
+                                                      "valor": null,
+                                                      "filhos": [
+                                                        {
+                                                          "tipo": "comando",
+                                                          "valor": null,
+                                                          "filhos": [
+                                                            {
+                                                              "tipo": "terminal",
+                                                              "valor": "LPAREN",
+                                                              "filhos": []
+                                                            },
+                                                            {
+                                                              "tipo": "corpocomando",
+                                                              "valor": null,
+                                                              "filhos": [
+                                                                {
+                                                                  "tipo": "valor",
+                                                                  "valor": null,
+                                                                  "filhos": [
+                                                                    {
+                                                                      "tipo": "terminal",
+                                                                      "valor": "INT",
+                                                                      "filhos": []
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "tipo": "corpoaposvalor",
+                                                                  "valor": null,
+                                                                  "filhos": [
+                                                                    {
+                                                                      "tipo": "valor",
+                                                                      "valor": null,
+                                                                      "filhos": [
+                                                                        {
+                                                                          "tipo": "terminal",
+                                                                          "valor": "INT",
+                                                                          "filhos": []
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "tipo": "operador",
+                                                                      "valor": null,
+                                                                      "filhos": [
+                                                                        {
+                                                                          "tipo": "terminal",
+                                                                          "valor": "*",
+                                                                          "filhos": []
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "tipo": "terminal",
+                                                              "valor": "RPAREN",
+                                                              "filhos": []
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "tipo": "terminal",
+                                                          "valor": "EOL",
+                                                          "filhos": []
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "tipo": "listalinhas",
+                                                      "valor": null,
+                                                      "filhos": [
+                                                        {
+                                                          "tipo": "linha",
+                                                          "valor": null,
+                                                          "filhos": [
+                                                            {
+                                                              "tipo": "comando",
+                                                              "valor": null,
+                                                              "filhos": [
+                                                                {
+                                                                  "tipo": "terminal",
+                                                                  "valor": "LPAREN",
+                                                                  "filhos": []
+                                                                },
+                                                                {
+                                                                  "tipo": "corpocomando",
+                                                                  "valor": null,
+                                                                  "filhos": [
+                                                                    {
+                                                                      "tipo": "valor",
+                                                                      "valor": null,
+                                                                      "filhos": [
+                                                                        {
+                                                                          "tipo": "terminal",
+                                                                          "valor": "INT",
+                                                                          "filhos": []
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "tipo": "corpoaposvalor",
+                                                                      "valor": null,
+                                                                      "filhos": [
+                                                                        {
+                                                                          "tipo": "valor",
+                                                                          "valor": null,
+                                                                          "filhos": [
+                                                                            {
+                                                                              "tipo": "terminal",
+                                                                              "valor": "INT",
+                                                                              "filhos": []
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "tipo": "operador",
+                                                                          "valor": null,
+                                                                          "filhos": [
+                                                                            {
+                                                                              "tipo": "terminal",
+                                                                              "valor": "/",
+                                                                              "filhos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "tipo": "terminal",
+                                                                  "valor": "RPAREN",
+                                                                  "filhos": []
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "tipo": "terminal",
+                                                              "valor": "EOL",
+                                                              "filhos": []
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "tipo": "listalinhas",
+                                                          "valor": null,
+                                                          "filhos": [
+                                                            {
+                                                              "tipo": "linha",
+                                                              "valor": null,
+                                                              "filhos": [
+                                                                {
+                                                                  "tipo": "comando",
+                                                                  "valor": null,
+                                                                  "filhos": [
+                                                                    {
+                                                                      "tipo": "terminal",
+                                                                      "valor": "LPAREN",
+                                                                      "filhos": []
+                                                                    },
+                                                                    {
+                                                                      "tipo": "corpocomando",
+                                                                      "valor": null,
+                                                                      "filhos": [
+                                                                        {
+                                                                          "tipo": "terminal",
+                                                                          "valor": "RES",
+                                                                          "filhos": []
+                                                                        },
+                                                                        {
+                                                                          "tipo": "valor",
+                                                                          "valor": null,
+                                                                          "filhos": [
+                                                                            {
+                                                                              "tipo": "terminal",
+                                                                              "valor": "INT",
+                                                                              "filhos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "tipo": "terminal",
+                                                                      "valor": "RPAREN",
+                                                                      "filhos": []
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "tipo": "terminal",
+                                                                  "valor": "EOL",
+                                                                  "filhos": []
+                                                                }
+                                                              ]
+                                                            },
+                                                            {
+                                                              "tipo": "listalinhas",
+                                                              "valor": null,
+                                                              "filhos": [
+                                                                {
+                                                                  "tipo": "linha",
+                                                                  "valor": null,
+                                                                  "filhos": [
+                                                                    {
+                                                                      "tipo": "comando",
+                                                                      "valor": null,
+                                                                      "filhos": [
+                                                                        {
+                                                                          "tipo": "terminal",
+                                                                          "valor": "LPAREN",
+                                                                          "filhos": []
+                                                                        },
+                                                                        {
+                                                                          "tipo": "corpocomando",
+                                                                          "valor": null,
+                                                                          "filhos": [
+                                                                            {
+                                                                              "tipo": "valor",
+                                                                              "valor": null,
+                                                                              "filhos": [
+                                                                                {
+                                                                                  "tipo": "terminal",
+                                                                                  "valor": "ID",
+                                                                                  "filhos": []
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "tipo": "corpoaposvalor",
+                                                                              "valor": null,
+                                                                              "filhos": [
+                                                                                {
+                                                                                  "tipo": "valor",
+                                                                                  "valor": null,
+                                                                                  "filhos": [
+                                                                                    {
+                                                                                      "tipo": "terminal",
+                                                                                      "valor": "REAL",
+                                                                                      "filhos": []
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "tipo": "operador",
+                                                                                  "valor": null,
+                                                                                  "filhos": [
+                                                                                    {
+                                                                                      "tipo": "terminal",
+                                                                                      "valor": "+",
+                                                                                      "filhos": []
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "tipo": "terminal",
+                                                                          "valor": "RPAREN",
+                                                                          "filhos": []
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "tipo": "terminal",
+                                                                      "valor": "EOL",
+                                                                      "filhos": []
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "tipo": "listalinhas",
+                                                                  "valor": null,
+                                                                  "filhos": [
+                                                                    {
+                                                                      "tipo": "linha",
+                                                                      "valor": null,
+                                                                      "filhos": [
+                                                                        {
+                                                                          "tipo": "comando",
+                                                                          "valor": null,
+                                                                          "filhos": [
+                                                                            {
+                                                                              "tipo": "terminal",
+                                                                              "valor": "LPAREN",
+                                                                              "filhos": []
+                                                                            },
+                                                                            {
+                                                                              "tipo": "corpocomando",
+                                                                              "valor": null,
+                                                                              "filhos": [
+                                                                                {
+                                                                                  "tipo": "terminal",
+                                                                                  "valor": "IF",
+                                                                                  "filhos": []
+                                                                                },
+                                                                                {
+                                                                                  "tipo": "valor",
+                                                                                  "valor": null,
+                                                                                  "filhos": [
+                                                                                    {
+                                                                                      "tipo": "comando",
+                                                                                      "valor": null,
+                                                                                      "filhos": [
+                                                                                        {
+                                                                                          "tipo": "terminal",
+                                                                                          "valor": "LPAREN",
+                                                                                          "filhos": []
+                                                                                        },
+                                                                                        {
+                                                                                          "tipo": "corpocomando",
+                                                                                          "valor": null,
+                                                                                          "filhos": [
+                                                                                            {
+                                                                                              "tipo": "valor",
+                                                                                              "valor": null,
+                                                                                              "filhos": [
+                                                                                                {
+                                                                                                  "tipo": "terminal",
+                                                                                                  "valor": "INT",
+                                                                                                  "filhos": []
+                                                                                                }
+                                                                                              ]
+                                                                                            },
+                                                                                            {
+                                                                                              "tipo": "corpoaposvalor",
+                                                                                              "valor": null,
+                                                                                              "filhos": [
+                                                                                                {
+                                                                                                  "tipo": "valor",
+                                                                                                  "valor": null,
+                                                                                                  "filhos": [
+                                                                                                    {
+                                                                                                      "tipo": "terminal",
+                                                                                                      "valor": "INT",
+                                                                                                      "filhos": []
+                                                                                                    }
+                                                                                                  ]
+                                                                                                },
+                                                                                                {
+                                                                                                  "tipo": "operador",
+                                                                                                  "valor": null,
+                                                                                                  "filhos": [
+                                                                                                    {
+                                                                                                      "tipo": "terminal",
+                                                                                                      "valor": ">",
+                                                                                                      "filhos": []
+                                                                                                    }
+                                                                                                  ]
+                                                                                                }
+                                                                                              ]
+                                                                                            }
+                                                                                          ]
+                                                                                        },
+                                                                                        {
+                                                                                          "tipo": "terminal",
+                                                                                          "valor": "RPAREN",
+                                                                                          "filhos": []
+                                                                                        }
+                                                                                      ]
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "tipo": "comando",
+                                                                                  "valor": null,
+                                                                                  "filhos": [
+                                                                                    {
+                                                                                      "tipo": "terminal",
+                                                                                      "valor": "LPAREN",
+                                                                                      "filhos": []
+                                                                                    },
+                                                                                    {
+                                                                                      "tipo": "corpocomando",
+                                                                                      "valor": null,
+                                                                                      "filhos": [
+                                                                                        {
+                                                                                          "tipo": "terminal",
+                                                                                          "valor": "SET",
+                                                                                          "filhos": []
+                                                                                        },
+                                                                                        {
+                                                                                          "tipo": "valor",
+                                                                                          "valor": null,
+                                                                                          "filhos": [
+                                                                                            {
+                                                                                              "tipo": "terminal",
+                                                                                              "valor": "INT",
+                                                                                              "filhos": []
+                                                                                            }
+                                                                                          ]
+                                                                                        },
+                                                                                        {
+                                                                                          "tipo": "terminal",
+                                                                                          "valor": "ID",
+                                                                                          "filhos": []
+                                                                                        }
+                                                                                      ]
+                                                                                    },
+                                                                                    {
+                                                                                      "tipo": "terminal",
+                                                                                      "valor": "RPAREN",
+                                                                                      "filhos": []
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "tipo": "terminal",
+                                                                              "valor": "RPAREN",
+                                                                              "filhos": []
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "tipo": "terminal",
+                                                                          "valor": "EOL",
+                                                                          "filhos": []
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    {
+                                                                      "tipo": "listalinhas",
+                                                                      "valor": null,
+                                                                      "filhos": [
+                                                                        {
+                                                                          "tipo": "linha",
+                                                                          "valor": null,
+                                                                          "filhos": [
+                                                                            {
+                                                                              "tipo": "comando",
+                                                                              "valor": null,
+                                                                              "filhos": [
+                                                                                {
+                                                                                  "tipo": "terminal",
+                                                                                  "valor": "LPAREN",
+                                                                                  "filhos": []
+                                                                                },
+                                                                                {
+                                                                                  "tipo": "corpocomando",
+                                                                                  "valor": null,
+                                                                                  "filhos": [
+                                                                                    {
+                                                                                      "tipo": "terminal",
+                                                                                      "valor": "WHILE",
+                                                                                      "filhos": []
+                                                                                    },
+                                                                                    {
+                                                                                      "tipo": "valor",
+                                                                                      "valor": null,
+                                                                                      "filhos": [
+                                                                                        {
+                                                                                          "tipo": "comando",
+                                                                                          "valor": null,
+                                                                                          "filhos": [
+                                                                                            {
+                                                                                              "tipo": "terminal",
+                                                                                              "valor": "LPAREN",
+                                                                                              "filhos": []
+                                                                                            },
+                                                                                            {
+                                                                                              "tipo": "corpocomando",
+                                                                                              "valor": null,
+                                                                                              "filhos": [
+                                                                                                {
+                                                                                                  "tipo": "valor",
+                                                                                                  "valor": null,
+                                                                                                  "filhos": [
+                                                                                                    {
+                                                                                                      "tipo": "terminal",
+                                                                                                      "valor": "ID",
+                                                                                                      "filhos": []
+                                                                                                    }
+                                                                                                  ]
+                                                                                                },
+                                                                                                {
+                                                                                                  "tipo": "corpoaposvalor",
+                                                                                                  "valor": null,
+                                                                                                  "filhos": [
+                                                                                                    {
+                                                                                                      "tipo": "valor",
+                                                                                                      "valor": null,
+                                                                                                      "filhos": [
+                                                                                                        {
+                                                                                                          "tipo": "terminal",
+                                                                                                          "valor": "INT",
+                                                                                                          "filhos": []
+                                                                                                        }
+                                                                                                      ]
+                                                                                                    },
+                                                                                                    {
+                                                                                                      "tipo": "operador",
+                                                                                                      "valor": null,
+                                                                                                      "filhos": [
+                                                                                                        {
+                                                                                                          "tipo": "terminal",
+                                                                                                          "valor": ">",
+                                                                                                          "filhos": []
+                                                                                                        }
+                                                                                                      ]
+                                                                                                    }
+                                                                                                  ]
+                                                                                                }
+                                                                                              ]
+                                                                                            },
+                                                                                            {
+                                                                                              "tipo": "terminal",
+                                                                                              "valor": "RPAREN",
+                                                                                              "filhos": []
+                                                                                            }
+                                                                                          ]
+                                                                                        }
+                                                                                      ]
+                                                                                    },
+                                                                                    {
+                                                                                      "tipo": "comando",
+                                                                                      "valor": null,
+                                                                                      "filhos": [
+                                                                                        {
+                                                                                          "tipo": "terminal",
+                                                                                          "valor": "LPAREN",
+                                                                                          "filhos": []
+                                                                                        },
+                                                                                        {
+                                                                                          "tipo": "corpocomando",
+                                                                                          "valor": null,
+                                                                                          "filhos": [
+                                                                                            {
+                                                                                              "tipo": "terminal",
+                                                                                              "valor": "SET",
+                                                                                              "filhos": []
+                                                                                            },
+                                                                                            {
+                                                                                              "tipo": "valor",
+                                                                                              "valor": null,
+                                                                                              "filhos": [
+                                                                                                {
+                                                                                                  "tipo": "comando",
+                                                                                                  "valor": null,
+                                                                                                  "filhos": [
+                                                                                                    {
+                                                                                                      "tipo": "terminal",
+                                                                                                      "valor": "LPAREN",
+                                                                                                      "filhos": []
+                                                                                                    },
+                                                                                                    {
+                                                                                                      "tipo": "corpocomando",
+                                                                                                      "valor": null,
+                                                                                                      "filhos": [
+                                                                                                        {
+                                                                                                          "tipo": "valor",
+                                                                                                          "valor": null,
+                                                                                                          "filhos": [
+                                                                                                            {
+                                                                                                              "tipo": "terminal",
+                                                                                                              "valor": "ID",
+                                                                                                              "filhos": []
+                                                                                                            }
+                                                                                                          ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "tipo": "corpoaposvalor",
+                                                                                                          "valor": null,
+                                                                                                          "filhos": [
+                                                                                                            {
+                                                                                                              "tipo": "valor",
+                                                                                                              "valor": null,
+                                                                                                              "filhos": [
+                                                                                                                {
+                                                                                                                  "tipo": "terminal",
+                                                                                                                  "valor": "INT",
+                                                                                                                  "filhos": []
+                                                                                                                }
+                                                                                                              ]
+                                                                                                            },
+                                                                                                            {
+                                                                                                              "tipo": "operador",
+                                                                                                              "valor": null,
+                                                                                                              "filhos": [
+                                                                                                                {
+                                                                                                                  "tipo": "terminal",
+                                                                                                                  "valor": "-",
+                                                                                                                  "filhos": []
+                                                                                                                }
+                                                                                                              ]
+                                                                                                            }
+                                                                                                          ]
+                                                                                                        }
+                                                                                                      ]
+                                                                                                    },
+                                                                                                    {
+                                                                                                      "tipo": "terminal",
+                                                                                                      "valor": "RPAREN",
+                                                                                                      "filhos": []
+                                                                                                    }
+                                                                                                  ]
+                                                                                                }
+                                                                                              ]
+                                                                                            },
+                                                                                            {
+                                                                                              "tipo": "terminal",
+                                                                                              "valor": "ID",
+                                                                                              "filhos": []
+                                                                                            }
+                                                                                          ]
+                                                                                        },
+                                                                                        {
+                                                                                          "tipo": "terminal",
+                                                                                          "valor": "RPAREN",
+                                                                                          "filhos": []
+                                                                                        }
+                                                                                      ]
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "tipo": "terminal",
+                                                                                  "valor": "RPAREN",
+                                                                                  "filhos": []
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            {
+                                                                              "tipo": "terminal",
+                                                                              "valor": "EOL",
+                                                                              "filhos": []
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "tipo": "listalinhas",
+                                                                          "valor": null,
+                                                                          "filhos": [
+                                                                            {
+                                                                              "tipo": "epsilon",
+                                                                              "valor": "ε",
+                                                                              "filhos": []
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "terminal",
+      "valor": "END_CMD",
+      "filhos": []
+    },
+    {
+      "tipo": "terminal",
+      "valor": "EOL",
+      "filhos": []
+    }
+  ]
+}

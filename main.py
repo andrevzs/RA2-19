@@ -8,6 +8,7 @@ import sys
 from ler_tokens import lerTokens
 from gramatica_ll1 import construirGramatica, analisarLL1
 from parser import parsear
+from arvore_assembly import gerarArvore, gerarAssembly, salvarArvore
 
 
 def lerArquivoTeste(nome_arquivo):
@@ -72,7 +73,9 @@ def processarLinhas(linhas):
     if resultado["sucesso"]:
         print("Parsing realizado com sucesso!")
         print("\nÁrvore sintática:")
-        print(resultado["arvore"])
+        derivacao = resultado.get("derivacao", resultado.get("arvore"))
+        arvore = gerarArvore(derivacao)
+        print(arvore)
     else:
         print("Erro durante o parsing:")
         print(resultado["erro"])
@@ -80,7 +83,15 @@ def processarLinhas(linhas):
 
     salvarTokens(todos_tokens)
 
-    return todos_tokens
+    salvarArvore(arvore)
+    codigo_asm = gerarAssembly(arvore, todos_tokens)
+    salvarAssembly(codigo_asm)
+
+    return {
+        "tokens": todos_tokens,
+        "arvore": arvore,
+        "assembly": codigo_asm,
+    }
 
 
 def main():
