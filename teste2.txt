@@ -14,4 +14,6 @@
 ((1.0 2.0 +) (3.0 4.0 *) /)
 (RES 10)
 (-2.5 -1.5 *)
+(IF (7.5 3.2 >) (SET 1 LOOP))
+(WHILE (LOOP 0 >) (SET (LOOP 1 -) LOOP))
 (END)

@@ -14,4 +14,6 @@
 (12 4 /)
 (RES 1)
 (VAR 5.5 +)
+(IF (3 2 >) (SET 1 FLAG))
+(WHILE (FLAG 0 >) (SET (FLAG 1 -) FLAG))
 (END)

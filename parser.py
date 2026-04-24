@@ -203,7 +203,10 @@ class Parser:
         nodo = NodoArvore("operador")
         valor = self._valor_token_atual()
 
-        operadores = {"+", "-", "*", "/", "//", "%", "^", "|"}
+        operadores = {
+            "+", "-", "*", "/", "//", "%", "^", "|",
+            ">", "<", ">=", "<=", "==", "!="
+        }
 
         if valor in operadores:
             nodo.add_filho(NodoArvore("terminal", valor))

@@ -18,7 +18,8 @@ def construirGramatica():
             "RES", "SET", "GET",
             "IF", "IFELSE", "WHILE", "BLOCK",
             "INT", "REAL", "ID",
-            "+", "-", "*", "|", "/", "%", "^",
+            "+", "-", "*", "|", "/", "//", "%", "^",
+            ">", "<", ">=", "<=", "==", "!=",
             EOF
         },
 
@@ -86,8 +87,15 @@ def construirGramatica():
                 ["*"],
                 ["|"],
                 ["/"],
+                ["//"],
                 ["%"],
-                ["^"]
+                ["^"],
+                [">"],
+                ["<"],
+                [">="],
+                ["<="],
+                ["=="],
+                ["!="]
             ]
         }
     }
@@ -275,7 +283,10 @@ def gerarMarkdownGramatica(gramatica):
     
     # Separar terminais em categorias
     t_sorted = sorted([t for t in terminais if t != EOF and t != EPSILON])
-    operadores = [t for t in t_sorted if t in ["+", "-", "*", "/", "%", "^", "|"]]
+    operadores = [
+        t for t in t_sorted
+        if t in ["+", "-", "*", "/", "//", "%", "^", "|", ">", "<", ">=", "<=", "==", "!="]
+    ]
     keywords = [t for t in t_sorted if t in ["START_CMD", "END_CMD", "RES", "SET", "GET", "IF", "IFELSE", "WHILE", "BLOCK"]]
     tipos = [t for t in t_sorted if t in ["INT", "REAL", "ID", "EOL"]]
     delim = [t for t in t_sorted if t in ["LPAREN", "RPAREN"]]

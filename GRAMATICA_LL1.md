@@ -4,7 +4,7 @@
 programa
 
 ## Terminais
-LPAREN, RPAREN, EOL, ID, INT, REAL, BLOCK, END_CMD, GET, IF, IFELSE, RES, SET, START_CMD, WHILE, %, *, +, -, /, ^, |
+LPAREN, RPAREN, EOL, ID, INT, REAL, BLOCK, END_CMD, GET, IF, IFELSE, RES, SET, START_CMD, WHILE, !=, %, *, +, -, /, //, <, <=, ==, >, >=, ^, |
 
 ## Não-Terminais
 comando, corpoaposvalor, corpocomando, linha, listacomando, listalinhas, operador, programa, valor
@@ -47,8 +47,15 @@ operador →
   | *
   | |
   | /
+  | //
   | %
   | ^
+  | >
+  | <
+  | >=
+  | <=
+  | ==
+  | !=
 
 programa →
   START_CMD EOL listalinhas END_CMD EOL $
